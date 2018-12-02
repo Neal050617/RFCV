@@ -1,5 +1,7 @@
 # make biom
 biom convert -i genus.xls -o genus.biom --table-type "OTU table" --process-obs-metadata naive --to-hdf5
+# wilcoxon test
+wilcox.py -i genus.xls -c LT_S_LT_L -g map.LT_S_LT_L.txt -o LT_S-LT_L.wilcox.genus.xls
 # Random forest
 random_forest4key_out_select.pl genus.biom genus.xls map.LT_S_LT_L.txt 0.001
 # RFCV & ROC
